@@ -1,0 +1,89 @@
+>LIST DICT PRODUCTS
+
+DICT PRODUCTS    10:31:06am  02 Nov 2026  Page    1
+
+               Type &
+Field......... Field. Field........ Conversion.. Column......... Output Depth &
+Name.......... Number Definition... Code........ Heading........ Format Assoc..
+
+SKU            D    0                                   SKU      12R    S
+UPC            D    0                                   UPC      12R    S
+PRODUCT_ID     D    0                            Product ID      12R    S
+@ID            D    0                            PRODUCTS        35L    S
+ID             D    0                            PRODUCTS        35L    S
+ISBN           D    1                            ISBN            15L    S
+TITLE          D    2                            Title           35L    S
+DISCS          D    3                            # Discs         5R     S
+DISKS          D    3                            # Disks         5R     S
+RATING         D    4                            Rating          20L    S
+TIME           D    5               MT           Time            5R     S
+ASPECT         D    6                                 Aspect     15R    S
+GENRE          D    7                            Genre           25L    S
+DIRECTOR       D    8                            Director(s)     35L    M
+WRITER         D    9                            Writer(s)       35L    M
+ACTOR          D   10                            Lead Actors     35L    M
+ACTORS         D   10                            Lead Actors     35L    M
+COMPOSER       D   11                            Composer(s)     35L    M
+PRODUCER       D   12                            Producer(s)     35L    M
+NOEPISODES     D   13                            # Of Episodes   2R     S
+THEATERDATE    D   14               D4/          Theatrical Rele 10R    S
+                                                 ase Date
+DVDRELDATE     D   15                            DVD Release Dat 10R    S
+                                                 e
+MPN            D   16                            Motion Picture  10L    S
+                                                 #
+STUDIO         D   17                            Studio          20L    S
+FORMAT         D   18                            Format          20L    S
+SYNOPSIS       D   19                            Movie Synopsis  35L    S
+DESC           D   19                            Movie Descripti 35L    S
+                                                 on
+DESCRIPTION    D   19                            Movie Descripti 35L    S
+                                                 on
+DESC1          D   19                            Movie Descripti 35L    S
+                                                 on
+LOCATION_CODE  D   20                            Location Code   5L     S
+STATUS         D   21                            Status          10L    M INVEN
+                                                                        TORY_IN
+                                                                        FO
+COPY_IDS       D   22                            Copy IDs        4R     M INVEN
+                                                                        TORY_IN
+                                                                        FO
+AWARD_TYPE     D   23                            Award Type      20L    M AWARD
+                                                                        _INFO
+AWARD_NAME     D   24                            Award Name      20L    M AWARD
+                                                                        _INFO
+AWARD_RECIPIEN D   25                            Award Recipient 20L    M AWARD
+T                                                                       _INFO
+AMENDED_BY     D   26                            Amended By      30L    M AMEND
+                                                                        _INFO
+AMENDED_DATE   D   27               D4/          Amended Date    10R    M AMEND
+                                                                        _INFO
+MOVIE_IMAGE    D   28                            Image           30L    S
+IMAGE_ID       D   28                            Image           30L    S
+L_UPC          I      LEN(@ID)                   UPC Length      3L     S
+LOCATION_STATE I      TRANS('LOCATI              Inventory State 2L     M
+_CODE                 ONS',STATUS,'               Code
+                      STATE_CODE','
+                      C')
+LOCATION_ZIP   I      TRANS('LOCATI              Inventory Zip   5L     M
+                      ONS',STATUS,'
+                      ZIP','C')
+LOCATION       I      EXTRACT(@RECO              Location        25L    S
+                      RD,20,0,0);TR
+                      ANS('LOCATION
+                      S',@1,1,'X')
+@              PH     TITLE
+
+INVENTORY_INFO PH     COPY_IDS
+                      LOCATION_STAT
+                      E_CODE
+                      LOCATION_ZIP
+                      STATUS
+AMEND_INFO     PH     AMENDED_BY
+                      AMENDED_DATE
+AWARD_INFO     PH     AWARD_TYPE
+                      AWARD_NAME
+                      AWARD_RECIPIE
+                      NT
+
+47 records listed.

@@ -31,11 +31,11 @@ Nothing is installed on the database server.
 
 ## Installation
 
-Install once on each computer. Unpack `mvbu-chrome-<version>.zip` to a permanent folder first, because the browser loads the extension from that folder.
+Install once on each computer. download chrome folder,  Unpack `mvbu-chrome-<version>.zip` to a permanent folder first, because the browser loads the extension from that folder.
 
 ### 1. Register the helper
 
-**Windows**: double-click `host\install-chrome-host.cmd`. It runs the installer with Python, not PowerShell, so it works where company policy only allows signed PowerShell scripts.
+**Windows**: double-click `chrome\host\install-chrome-host.cmd`. It runs the installer with Python, not PowerShell, so it works where company policy only allows signed PowerShell scripts.
 
 **macOS and Linux**: in a terminal, run:
 
